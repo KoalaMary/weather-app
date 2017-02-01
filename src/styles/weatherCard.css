@@ -1,0 +1,4 @@
+.weather {
+    display: flex;
+    flex-direction: column;
+}

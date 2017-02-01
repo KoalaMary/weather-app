@@ -1,0 +1,18 @@
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+}
+
+.active {
+    color: red;
+}
