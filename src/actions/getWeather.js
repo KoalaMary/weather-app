@@ -1,9 +1,10 @@
-import {REQUEST_WEATHER, RECEIVE_WEATHER, REJECT_WETHER} from '../constants';
+import {REQUEST_WEATHER, RECEIVE_WEATHER, REJECT_WEATHER} from '../constants';
 import fetch from 'isomorphic-fetch';
 
-export function requestWeather() {
+export function requestWeather(lat, lng) {
     return {
-        type: REQUEST_WEATHER
+        type: REQUEST_WEATHER,
+        lat, lng
     }
 }
 
@@ -17,15 +18,15 @@ export function receiveWeather(data) {
 
 export function rejectWeather(error) {
     return {
-        type: REJECT_WETHER,
+        type: REJECT_WEATHER,
         error
     }
 }
 
-export function fetchWeather() {
+export function fetchWeather(lat, lng) {
     return dispatch => {
-        dispatch(requestWeather())
-        return fetch('http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=e3da0add071c501c514b5b35d62e8547')
+        dispatch(requestWeather(lat, lng))
+        return fetch('http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lng + '&appid=e3da0add071c501c514b5b35d62e8547')
             .then(response => response.json())
             .then(json => dispatch(receiveWeather(json)))
             .catch(error => dispatch(rejectWeather(error)))

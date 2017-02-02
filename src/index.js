@@ -5,10 +5,10 @@ import {Provider} from 'react-redux';
 import {syncHistoryWithStore} from 'react-router-redux';
 import initializeStore from './createStore';
 import routes from './routes';
-import {fetchWeather} from './actions/getWeather';
+// import {fetchWeather} from './actions/getWeather';
 
 const store = initializeStore({});
-store.dispatch(fetchWeather());
+// store.dispatch(fetchWeather());
 console.log(store.getState());
 const history = syncHistoryWithStore(browserHistory, store);
 

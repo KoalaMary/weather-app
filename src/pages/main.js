@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Map from '../components/map';
 import WeatherCard from '../components/weatherCard';
-import GetWeatherButton from '../components/getWeatherButton';
 import '../styles/main.css';
 
 class Main extends Component {
@@ -15,7 +14,6 @@ class Main extends Component {
                     <Map />
                     <WeatherCard />
                 </div>
-                <GetWeatherButton />
             </div>
         );
     }

@@ -27,7 +27,7 @@ export default function getWeatherReducer(state = initialState, action) {
                     temp: data.main.temp,
                     humidity: data.main.humidity,
                     wind: data.wind.speed,
-                    base: data.base,
+                    base: data.weather[0].main,
                     city: data.name,
                     country: data.sys.country,
                     date: action.date
