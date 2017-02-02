@@ -10,7 +10,6 @@ const initialState = {
 export default function settingsReducer(state = initialState, action) {
     switch (action.type) {
         case SET_BLUE_COLOR:
-            console.log('color reducer', state);
             return Object.assign({}, state, {
                 color: 'blue'
             });

@@ -31,7 +31,7 @@ class Settings extends Component {
                     </li>
                     <li>
                        Font size
-                        <input type="number" min="10" max="40" step="1" defaultValue="20" onChange={this.setFontSize.bind(this)}/>
+                        <input type="number" min="16" max="30" step="1" defaultValue="20" onChange={this.setFontSize.bind(this)}/>
                     </li>
                 </ul>
             </div>

@@ -3,3 +3,6 @@ export const SET_MARKER = 'SET_MARKER';
 export const SET_BLUE_COLOR = 'SET_BLUE_COLOR';
 export const SET_RED_COLOR = 'SET_RED_COLOR';
 export const SET_FONT_SIZE = 'SET_FONT_SIZE';
+export const REQUEST_WEATHER = 'REQUEST_WEATHER';
+export const RECEIVE_WEATHER = 'RECEIVE_WEATHER';
+export const REJECT_WEATHER = 'REJECT_WEATHER';

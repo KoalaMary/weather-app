@@ -9,10 +9,12 @@ class WeatherCard extends Component {
             <div className="weatherCard">
                 <ul className="weather" style={{color: this.props.color}}>
                     <li><img src="" alt="weather"/></li>
-                    <li>City</li>
-                    <li>Country</li>
-                    <li>Temperature</li>
-                    <li>Humidity</li>
+                    <li>City {this.props.city}</li>
+                    <li>Country {this.props.country}</li>
+                    <li>Temperature {this.props.temp}</li>
+                    <li>Humidity {this.props.humidity}</li>
+                    <li>Base {this.props.base}</li>
+                    <li>Date {new Date(this.props.date).toLocaleDateString()}</li>
                 </ul>
             </div>
         );
@@ -21,7 +23,13 @@ class WeatherCard extends Component {
 
 function mapStateToProps(state) {
     return {
-        color: state.settings.color
+        color: state.settings.color,
+        city: state.api.weather.city,
+        country: state.api.weather.country,
+        temp: state.api.weather.temp,
+        humidity: state.api.weather.humidity,
+        base: state.api.weather.base,
+        date: state.api.weather.date
     }
 }
 
