@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway')
+@import url('https://fonts.googleapis.com/css?family=News+Cycle')
+$primary-color: #4e4d4a
+$orange: #d26c22
+.header
+  display: flex
+  flex-direction: row
+  align-items: center
+  font-family: 'Raleway', sans-serif
+  //font-family: 'News Cycle', sans-serif
+  background-color: $primary-color
+  color: #ecf0f1
+
+  &__title
+    margin: 0
+    color: $orange
+
+  &__nav
+    margin: 0
+    display: flex
+    flex-direction: row
+
+    &__item
+      margin: 0
+      list-style: none
+
+      &__link
+        display: block
+        margin-right: 20px
+        padding: 25px
+        text-decoration: none
+        color: #ecf0f1
+
+        &:hover
+          background-color: $orange
+
+        &_active
+          color: $primary-color
+          background-color: $orange

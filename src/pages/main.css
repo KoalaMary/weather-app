@@ -1,0 +1,21 @@
+.main {
+    width: 1140px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 70px 30px;
+    background-color: #f5f5f5;
+}
+
+.main__weather-card {
+    position: relative;
+}
+
+.main__weather-card__loading {
+    position: absolute;
+    top: 40%;
+    left: -200px;
+}
+
+/*# sourceMappingURL=main.css.map */

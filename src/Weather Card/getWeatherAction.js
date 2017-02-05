@@ -26,7 +26,7 @@ export function rejectWeather(error) {
 export function fetchWeather(lat, lng) {
     return dispatch => {
         dispatch(requestWeather(lat, lng))
-        return fetch('http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lng + '&appid=e3da0add071c501c514b5b35d62e8547')
+        return fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=e3da0add071c501c514b5b35d62e8547`)
             .then(response => response.json())
             .then(json => dispatch(receiveWeather(json)))
             .catch(error => dispatch(rejectWeather(error)))

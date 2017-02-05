@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import Map from '../components/map';
-import WeatherCard from '../components/weatherCard';
-import '../styles/main.css';
+import {connect} from 'react-redux';
+import Map from '../Map/map';
+import WeatherCard from '../Weather Card/weatherCard';
+import './main.css';
 
 class Main extends Component {
 
@@ -10,13 +11,27 @@ class Main extends Component {
     render() {
         return (
             <div className="main">
-                <div className="info">
-                    <Map />
+                <Map />
+                <div className="main__weather-card">
+                    {!this.props.isFetching &&
                     <WeatherCard />
+                    }
+                    <div className="main__weather-card__loading">
+                        {this.props.isFetching &&
+                        <h2>Loading...</h2>
+                        }
+                    </div>
                 </div>
             </div>
         );
     }
 }
 
-export default Main;
+function mapStateToProps(state) {
+    return {
+        isFetching: state.api.isFetching,
+        fetched: state.api.fetched
+    }
+}
+
+export default connect(mapStateToProps)(Main);

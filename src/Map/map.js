@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 import {connect} from 'react-redux';
-import setMarker from '../actions/setMarker';
-import '../styles/map.css';
+import setMarker from './setMarkerAction';
+import './map.css';
 
 const MapArguments = withGoogleMap((props) => (
     <GoogleMap
@@ -16,6 +16,10 @@ const MapArguments = withGoogleMap((props) => (
 ));
 
 class Map extends Component {
+    constructor(props) {
+        super(props);
+        this.handleMapClick = this.handleMapClick.bind(this)
+    }
 
     handleMapClick(event) {
         this.props.dispatch(setMarker(event.latLng));
@@ -31,7 +35,7 @@ class Map extends Component {
                     mapElement={
                         <div style={{height: '100%'}}/>
                     }
-                    onMapClick={this.handleMapClick.bind(this)}
+                    onMapClick={this.handleMapClick}
                     center={this.props.center}
                     marker={this.props.marker}
                 />

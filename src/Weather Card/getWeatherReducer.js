@@ -27,9 +27,11 @@ export default function getWeatherReducer(state = initialState, action) {
                     temp: data.main.temp,
                     humidity: data.main.humidity,
                     wind: data.wind.speed,
+                    pressure: data.main.pressure,
                     base: data.weather[0].main,
                     city: data.name,
                     country: data.sys.country,
+                    icon: data.weather[0].icon,
                     date: action.date
                 }
             });

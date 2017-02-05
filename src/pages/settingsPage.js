@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Settings from '../components/settings';
+import Settings from '../Settings/settings';
 
 class SettingsPage extends Component {
 
