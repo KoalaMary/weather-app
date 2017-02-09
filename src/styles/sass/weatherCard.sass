@@ -11,15 +11,16 @@ $orange: #d26c22
   background-color: #fff
   font-family: 'Raleway', sans-serif
 
-  &__add-to-my-place
-    position: absolute
-    top: 15px
-    right: 10px
-
   &__place
-    margin: 0
+    width: 200px
+    margin: 0 10px 0 0
+    display: inline-block
     font-size: 20px
     color: $orange
+
+  &__add-to-my-place
+    width: 80px
+    display: inline-block
 
   &__date
     font-size: 18px
@@ -34,12 +35,21 @@ $orange: #d26c22
 
     &__image
       width: 80px
-      height: 80px
+      height: auto
 
     &__temp
-      margin: 0
-      margin-left: 30px
+      width: 130px
+      margin: 0 0 0 30px
       font-size: 40px
+
+    &__measure
+      &__C
+        border-bottom-left-radius: 5px
+        border-top-left-radius: 5px
+
+      &__F
+        border-bottom-right-radius: 5px
+        border-top-right-radius: 5px
 
   &__value-list
     margin: 0
@@ -70,3 +80,7 @@ $orange: #d26c22
   &:hover
     color: $primary-color
 
+.temp-button
+  width: 30px
+  height: 30px
+  border: none

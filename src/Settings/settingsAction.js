@@ -1,22 +1,34 @@
-import {SET_BLUE_COLOR} from '../constants';
-import {SET_RED_COLOR} from '../constants';
-import {SET_FONT_SIZE} from '../constants';
+import {SET_FONT_STYLE_ITALIC, SET_FONT_STYLE_NORMAL} from '../constants';
+import {HUMIDITY_CHECKED, WIND_CHECKED, PRESSURE_CHECKED} from '../constants';
 
-export function setBlueColor() {
+export function setFontStyleNormal() {
     return {
-        type: SET_BLUE_COLOR
+        type: SET_FONT_STYLE_NORMAL,
+        style: 'normal'
     }
 }
 
-export function setRedColor() {
+export function setFontStyleItalic() {
     return {
-        type: SET_RED_COLOR
+        type: SET_FONT_STYLE_ITALIC,
+        style: 'italic'
     }
 }
 
-export function setFontSize(size) {
+export function humidityChecked() {
     return {
-        type: SET_FONT_SIZE,
-        size
+        type: HUMIDITY_CHECKED
+    }
+}
+
+export function windChecked() {
+    return {
+        type: WIND_CHECKED
+    }
+}
+
+export function pressureChecked() {
+    return {
+        type: PRESSURE_CHECKED
     }
 }

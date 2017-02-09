@@ -1,25 +1,36 @@
-import {SET_BLUE_COLOR} from '../constants';
-import {SET_RED_COLOR} from '../constants';
-import {SET_FONT_SIZE} from '../constants';
+import {SET_FONT_STYLE_ITALIC, SET_FONT_STYLE_NORMAL} from '../constants';
+import {HUMIDITY_CHECKED, WIND_CHECKED, PRESSURE_CHECKED} from '../constants';
 
 const initialState = {
     color: 'green',
-    size: 16
+    fontStyle: 'normal',
+    themeColor: 'red',
+    humidityChecked: true,
+    windChecked: true,
+    pressureChecked: true,
 };
 
 export default function settingsReducer(state = initialState, action) {
     switch (action.type) {
-        case SET_BLUE_COLOR:
+        case SET_FONT_STYLE_NORMAL:
             return Object.assign({}, state, {
-                color: 'blue'
+                fontStyle: action.style
             });
-        case SET_RED_COLOR:
+        case SET_FONT_STYLE_ITALIC:
             return Object.assign({}, state, {
-                color: 'red'
+                fontStyle: action.style
             });
-        case SET_FONT_SIZE:
+        case HUMIDITY_CHECKED:
             return Object.assign({}, state, {
-                size: action.size
+                humidityChecked: !state.humidityChecked
+            });
+        case WIND_CHECKED:
+            return Object.assign({}, state, {
+                windChecked: !state.windChecked
+            });
+        case PRESSURE_CHECKED:
+            return Object.assign({}, state, {
+                pressureChecked: !state.pressureChecked
             });
         default:
             return state;

@@ -1,24 +1,56 @@
-import {REQUEST_WEATHER, RECEIVE_WEATHER, REJECT_WEATHER, MEASURE_TEMP_C, MEASURE_TEMP_F} from '../constants';
+import {ADD_PLACE} from '../constants';
+import {
+    REQUEST_PLACE_WEATHER,
+    RECEIVE_PLACE_WEATHER,
+    REJECT_PLACE_WEATHER,
+    MEASURE_TEMP_F,
+    MEASURE_TEMP_C
+} from '../constants';
 
-const initialState = {
+const initialState = [
+    {
+        city: 'Semey',
+        country: 'KZ',
+        lat: 50.397,
+        lng: 80.644
+    }
+];
+
+export function addPlaceReducer(state = initialState, action) {
+    switch (action.type) {
+        case(ADD_PLACE):
+            return [...state,
+                {
+                    city: action.city,
+                    country: action.country,
+                    lat: action.lat,
+                    lng: action.lng
+                }
+            ];
+        default:
+            return state
+    }
+}
+
+const initState = {
     isFetching: false,
     fetched: false,
     weather: {},
     error: null,
 };
 
-export default function getWeatherReducer(state = initialState, action) {
+export function getPlaceWeatherReducer(state = initState, action) {
     switch (action.type) {
-        case REQUEST_WEATHER:
+        case REQUEST_PLACE_WEATHER:
             return Object.assign({}, state, {
                 isFetching: true
             });
-        case REJECT_WEATHER:
+        case REJECT_PLACE_WEATHER:
             return Object.assign({}, state, {
                 isFetching: false,
                 error: action.error
             });
-        case RECEIVE_WEATHER:
+        case RECEIVE_PLACE_WEATHER:
             let data = action.data;
             let measure = state.weather.measure;
             return Object.assign({}, state, {
@@ -33,7 +65,7 @@ export default function getWeatherReducer(state = initialState, action) {
                     city: data.name || 'No city',
                     country: data.sys.country || 'no country',
                     icon: data.weather[0].icon,
-                    date: action.date,
+                    date: data.dt,
                     measure: measure || 'C'
                 }
             });

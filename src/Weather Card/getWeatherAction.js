@@ -1,5 +1,17 @@
-import {REQUEST_WEATHER, RECEIVE_WEATHER, REJECT_WEATHER} from '../constants';
+import {REQUEST_WEATHER, RECEIVE_WEATHER, REJECT_WEATHER, MEASURE_TEMP_F, MEASURE_TEMP_C} from '../constants';
 import fetch from 'isomorphic-fetch';
+
+export function measureTempF() {
+    return {
+        type: MEASURE_TEMP_F
+    }
+}
+
+export function measureTempC() {
+    return {
+        type: MEASURE_TEMP_C
+    }
+}
 
 export function requestWeather(lat, lng) {
     return {

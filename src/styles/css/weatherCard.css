@@ -7,14 +7,15 @@
   color: #4e4d4a;
   background-color: #fff;
   font-family: "Raleway", sans-serif; }
-  .weather-card__add-to-my-place {
-    position: absolute;
-    top: 15px;
-    right: 10px; }
   .weather-card__place {
-    margin: 0;
+    width: 200px;
+    margin: 0 10px 0 0;
+    display: inline-block;
     font-size: 20px;
     color: #d26c22; }
+  .weather-card__add-to-my-place {
+    width: 80px;
+    display: inline-block; }
   .weather-card__date {
     font-size: 18px; }
   .weather-card__description {
@@ -25,11 +26,17 @@
     align-items: center; }
     .weather-card__temp-block__image {
       width: 80px;
-      height: 80px; }
+      height: auto; }
     .weather-card__temp-block__temp {
-      margin: 0;
-      margin-left: 30px;
+      width: 130px;
+      margin: 0 0 0 30px;
       font-size: 40px; }
+    .weather-card__temp-block__measure__C {
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px; }
+    .weather-card__temp-block__measure__F {
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px; }
   .weather-card__value-list {
     margin: 0;
     margin-top: 20px;
@@ -54,5 +61,14 @@
   border-radius: 7px; }
   .button:hover {
     color: #4e4d4a; }
+
+.temp-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+
+.active {
+  color: red;
+}}
 
 /*# sourceMappingURL=weatherCard.css.map */

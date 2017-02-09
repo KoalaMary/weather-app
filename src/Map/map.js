@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 import {connect} from 'react-redux';
 import setMarker from './setMarkerAction';
-import './map.css';
+import '../styles/css/map.css';
 
 const MapArguments = withGoogleMap((props) => (
     <GoogleMap
