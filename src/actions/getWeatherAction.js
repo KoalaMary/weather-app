@@ -13,34 +13,34 @@ export function measureTempC() {
     }
 }
 
-export function requestWeather(lat, lng) {
+export function requestWeather(lat, lng, page) {
     return {
         type: REQUEST_WEATHER,
-        lat, lng
+        lat, lng, page
     }
 }
 
-export function receiveWeather(data) {
+export function receiveWeather(data, page) {
     return {
         type: RECEIVE_WEATHER,
-        data,
+        data, page,
         date: Date.now()
     }
 }
 
-export function rejectWeather(error) {
+export function rejectWeather(error, page) {
     return {
         type: REJECT_WEATHER,
-        error
+        error, page
     }
 }
 
-export function fetchWeather(lat, lng) {
+export function fetchWeather(lat, lng, page) {
     return dispatch => {
-        dispatch(requestWeather(lat, lng))
+        dispatch(requestWeather(lat, lng, page))
         return fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=e3da0add071c501c514b5b35d62e8547`)
             .then(response => response.json())
-            .then(json => dispatch(receiveWeather(json)))
-            .catch(error => dispatch(rejectWeather(error)))
+            .then(json => dispatch(receiveWeather(json, page)))
+            .catch(error => dispatch(rejectWeather(error, page)))
     }
 }

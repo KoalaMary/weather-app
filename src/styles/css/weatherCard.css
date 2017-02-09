@@ -65,10 +65,10 @@
 .temp-button {
   width: 30px;
   height: 30px;
-  border: none;
+  border: none;}
 
 .active {
   color: red;
-}}
+}
 
 /*# sourceMappingURL=weatherCard.css.map */

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {setBlueColor, setRedColor} from './settingsAction';
+import {setBlueColor, setRedColor} from '../actions/settingsAction';
 import {connect} from 'react-redux';
 import '../styles/css/settings.css';
-import {setFontStyleNormal, setFontStyleItalic} from './settingsAction';
-import {humidityChecked, windChecked, pressureChecked} from './settingsAction';
+import {setFontStyleNormal, setFontStyleItalic} from '../actions/settingsAction';
+import {humidityChecked, windChecked, pressureChecked} from '../actions/settingsAction';
 
 class ModalSettings extends Component {
     constructor(props) {

@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {modal} from 'react-redux-modal';
-import ModalSettings from '../Settings/modalSettings';
-import Map from '../Map/map';
-import WeatherCard from '../Weather Card/weatherCard';
-import GetWeatherButton from '../Weather Card/getWeatherButton';
-import AddPlaceButton from '../Weather Card/addPlaceButton';
-import {fetchWeather} from '../Weather Card/getWeatherAction';
+import ModalSettings from './modalSettings';
+import Map from '../components/map';
+import WeatherCard from '../components/weatherCard';
+import GetWeatherButton from '../components/getWeatherButton';
+import AddPlaceButton from '../components/addPlaceButton';
+import {fetchWeather} from '../actions/getWeatherAction';
 import addPlace from '../My Places/placeAction';
-import {measureTempF, measureTempC} from "../Weather Card/getWeatherAction";
+import {measureTempF, measureTempC} from "../actions/getWeatherAction";
 import '../styles/css/main.css';
 
 class Main extends Component {
@@ -22,10 +22,11 @@ class Main extends Component {
     }
 
     getWeather = (lat, lng) => {
-        this.props.dispatch(fetchWeather(lat, lng));
+        this.props.dispatch(fetchWeather(lat, lng, 'main'));
     };
 
     addPlace = (city, country, lat, lng) => {
+        console.log('Lat', lat);
         this.props.dispatch(addPlace(city, country, lat, lng));
     };
 
@@ -69,8 +70,8 @@ class Main extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        api: state.api,
-        weather: state.api.weather,
+        api: state.weather.mainWeather.api,
+        weather: state.weather.mainWeather.data,
         settings: state.settings,
         marker: state.map.marker.position
     }

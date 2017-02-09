@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/css/weatherCard.css';
+import '../styles/sass/weatherCard.sass';
 
 const AddPlaceButton = ({weather, settings, addPlace, tempToC, tempToF}) => (
         <button className="weather-card__add-to-my-place button"

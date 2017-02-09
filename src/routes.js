@@ -1,8 +1,8 @@
 import React from 'react';
 import {Route, IndexRoute} from 'react-router';
 import App from './pages/app';
-import MyPlaces from './My Places/myPlaces';
-import ErrorPage from './ErrorPage/errorPage';
+import MyPlaces from './pages/myPlaces';
+import ErrorPage from './components/errorPage';
 import Main from "./pages/main";
 
 export default (

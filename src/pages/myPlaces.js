@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import WeatherCard from '../Weather Card/weatherCard';
-import PlacesList from './placesList';
-import {fetchPlaceWeather} from './placeAction';
-import {measureTempF, measureTempC} from '../My Places/placeAction';
+import WeatherCard from '../components/weatherCard';
+import PlacesList from '../components/placesList';
+import {fetchWeather} from '../actions/getWeatherAction';
+import {measureTempF, measureTempC} from '../actions/getWeatherAction';
 
 class MyPlaces extends Component {
-    getPlaceWeather = (place) => {
-        this.props.dispatch(fetchPlaceWeather(place.city, place.country));
+    getWeather = (lat, lng) => {
+        this.props.dispatch(fetchWeather(lat, lng, 'place'));
     };
 
     tempToF = () => {
@@ -32,7 +32,7 @@ class MyPlaces extends Component {
             <div>
                 <PlacesList
                     places={places}
-                    getPlaceWeather={this.getPlaceWeather}/>
+                    getPlaceWeather={this.getWeather}/>
                 <WeatherCard
                     weather={weather}
                     settings={settings}
@@ -46,7 +46,7 @@ class MyPlaces extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        weather: state.placeWeather.weather,
+        weather: state.weather.placeWeather.data,
         settings: state.settings,
         marker: state.map.marker.position,
         places: state.places
