@@ -1,17 +1,18 @@
-import {SET_FONT_STYLE_ITALIC, SET_FONT_STYLE_NORMAL} from '../constants';
+import {SET_FONT_STYLE} from '../constants';
 import {HUMIDITY_CHECKED, WIND_CHECKED, PRESSURE_CHECKED} from '../constants';
+import {SET_BACKGROUND} from '../constants';
 
-export function setFontStyleNormal() {
+export function setBackground(background) {
     return {
-        type: SET_FONT_STYLE_NORMAL,
-        style: 'normal'
+        type: SET_BACKGROUND,
+        background
     }
 }
 
-export function setFontStyleItalic() {
+export function setFontStyle(style) {
     return {
-        type: SET_FONT_STYLE_ITALIC,
-        style: 'italic'
+        type: SET_FONT_STYLE,
+        style
     }
 }
 

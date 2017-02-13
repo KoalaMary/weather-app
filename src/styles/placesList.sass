@@ -1,0 +1,38 @@
+$theme-color: #d26c22
+$dark: #4e4d4a
+$button-color: #ecf0f1
+
+.places-list
+  background-color: #fff
+
+  &__item
+    margin-bottom: 10px
+    padding: 10px 30px
+    position: relative
+    border: 1px solid $dark
+    cursor: pointer
+    box-shadow: 0px 10px 32px -6px rgba(78,77,74,1)
+
+    &:hover &__name
+      transform: scale(1.1, 1)
+      transition: transform 0.3s
+
+    &__name
+      color: $theme-color
+
+    &__button
+      padding: 4px 7px
+      position: absolute
+      top: 0
+      right: 0
+      background-color: $theme-color
+      border: none
+      color: $button-color
+      cursor: pointer
+
+      &:hover
+        color: $dark
+
+    &__since
+      font-size: 16px
+

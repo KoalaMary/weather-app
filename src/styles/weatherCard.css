@@ -1,10 +1,11 @@
 .weather-card {
   width: 320px;
-  height: 430px;
+  height: 433px;
   padding-left: 30px;
   padding-top: 20px;
   background-color: #fff;
-  font-size: 18px; }
+  font-size: 18px;
+  box-shadow: 0px 10px 32px -6px #4e4d4a; }
   .weather-card__place {
     font-size: 26px; }
   .weather-card__description {
@@ -24,10 +25,16 @@
 
 .measure__C {
   border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px; }
+  border-top-left-radius: 5px;
+  cursor: pointer; }
 .measure__F {
   border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px; }
+  border-top-right-radius: 5px;
+  cursor: pointer; }
+
+.active-temp {
+  background-color: #d26c22;
+  transition: all 0.2s; }
 
 .value-list {
   margin: 20px 0 0; }

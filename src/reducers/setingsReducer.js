@@ -1,10 +1,11 @@
-import {SET_FONT_STYLE_ITALIC, SET_FONT_STYLE_NORMAL} from '../constants';
+//noinspection JSUnresolvedVariable
+import {SET_FONT_STYLE} from '../constants';
 import {HUMIDITY_CHECKED, WIND_CHECKED, PRESSURE_CHECKED} from '../constants';
+import {SET_BACKGROUND} from '../constants';
 
 const initialState = {
-    color: 'green',
+    background: '#fff',
     fontStyle: 'normal',
-    themeColor: 'red',
     humidityChecked: true,
     windChecked: true,
     pressureChecked: true,
@@ -12,11 +13,11 @@ const initialState = {
 
 export default function settingsReducer(state = initialState, action) {
     switch (action.type) {
-        case SET_FONT_STYLE_NORMAL:
+        case SET_BACKGROUND:
             return Object.assign({}, state, {
-                fontStyle: action.style
+                background: action.background
             });
-        case SET_FONT_STYLE_ITALIC:
+        case SET_FONT_STYLE:
             return Object.assign({}, state, {
                 fontStyle: action.style
             });

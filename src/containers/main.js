@@ -1,23 +1,30 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {modal} from 'react-redux-modal';
-import ModalSettings from './modalSettings';
-import Map from '../components/map';
-import WeatherCard from '../components/weatherCard';
+import $ from 'min-jquery';
+import setMarker from '../actions/setMarkerAction';
 import {getWeather} from '../actions/weatherAction';
 import {addPlace} from '../actions/placeAction';
 import {measureTempF, measureTempC} from "../actions/weatherAction";
+import WeatherCard from '../components/weatherCard';
+import Map from '../components/map';
+import ModalSettings from './settings';
 import '../styles/main.css';
 
 class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.handleMapClick = this.handleMapClick.bind(this);
+    }
+
     componentWillMount() {
-        let position = this.props.marker;
+        let position = this.props.position;
         this.props.dispatch(getWeather(position.lat, position.lng, 'mainWeather'));
     }
 
     addModal() {
         modal.add(ModalSettings, {
-            size: 'medium',
+            size: 'small',
             closeOnOutsideClick: true,
             hideTitleBar: true,
         });
@@ -39,30 +46,51 @@ class Main extends Component {
     };
 
     tempToF = () => {
+        $('.measure__C').removeClass('active-temp');
+        $('.measure__F').addClass('active-temp');
         this.props.dispatch(measureTempF('mainWeather'));
     };
 
     tempToC = () => {
+        $('.measure__F').removeClass('active-temp');
+        $('.measure__C').addClass('active-temp');
         this.props.dispatch(measureTempC('mainWeather'));
     };
 
+    handleMapClick(event) {
+        this.props.dispatch(setMarker(event.latLng));
+    }
+
     render() {
-        const {api, weather, settings, marker} = this.props;
+        const {api, weather, settings, marker, position, center} = this.props;
         return (
             <div className="main">
                 <div className="button-panel">
                     <button onClick={this.addModal} className="settings-button button">Settings</button>
                     <div className="button-panel__weather-buttons">
                         <button className="button"
-                                onClick={() => this.getWeather(marker.lat, marker.lng)}>Get weather
+                                onClick={() => this.getWeather(position.lat, position.lng)}>Get weather
                         </button>
                         <button className="button"
                                 onClick={() => this.addPlace(weather)}>Add
                         </button>
                     </div>
                 </div>
+
                 <div className="weather-space">
-                    <Map />
+                    <div className="map-container">
+                        <Map
+                            containerElement={
+                                <div style={{height: "100%"}}/>
+                            }
+                            mapElement={
+                                <div style={{height: "100%"}}/>
+                            }
+                            onMapClick={this.handleMapClick}
+                            center={center}
+                            marker={marker}
+                        />
+                    </div>
                     < div className="weather-space__weather-card">
                         {api.isFetching
                             ? <h2 className="weather-space__weather-card__loader">Loading...</h2>
@@ -84,7 +112,9 @@ const mapStateToProps = (state) => {
         api: state.weather.mainWeather.api,
         weather: state.weather.mainWeather.data,
         settings: state.settings,
-        marker: state.map.marker.position
+        position: state.map.marker.position,
+        marker: state.map.marker,
+        center: state.map.center,
     }
 };
 

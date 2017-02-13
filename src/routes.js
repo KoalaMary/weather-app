@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, IndexRoute} from 'react-router';
 import App from './containers/app';
-import MyPlaces from './containers/myPlaces';
+import MyPlaces from './containers/places';
 import ErrorPage from './components/errorPage';
 import Main from "./containers/main";
 

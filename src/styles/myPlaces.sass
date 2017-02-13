@@ -6,20 +6,29 @@
   padding: 30px 50px
 
 .places-space
+  padding: 0 150px
   display: flex
   flex-direction: row
-  justify-content: space-around
+  justify-content: space-between
 
 .places-list
   width: 400px
   height: 450px
   overflow-y: scroll
-  border: 1px solid gray
 
   &__item
     font-size: 20px
 
     & p
       margin: 0
+
+.weather-space
+  position: relative
+
+  &__loader
+    position: absolute
+    top: 45%
+    left: -200px
+
 
 

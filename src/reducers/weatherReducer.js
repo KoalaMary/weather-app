@@ -29,7 +29,6 @@ export default function weatherReducer(state = initialState, action) {
                     }
                 }
             });
-            break;
         case
         REJECT_WEATHER:
             return Object.assign({}, state, {
@@ -40,11 +39,9 @@ export default function weatherReducer(state = initialState, action) {
                     }
                 }
             });
-            break;
         case
         RECEIVE_WEATHER:
             let info = action.data;
-            let date = new Date(action.date);
             return Object.assign({}, state, {
                 [action.field]: {
                     api: {
@@ -53,15 +50,15 @@ export default function weatherReducer(state = initialState, action) {
                     },
                     data: {
                         id: info.id,
-                        temp: info.main.temp - 273 || 'no info',
+                        temp: Math.floor(info.main.temp - 273) || 'no info',
                         humidity: info.main.humidity || 'no info',
                         wind: info.wind.speed || 'no info',
                         pressure: info.main.pressure || 'no info',
                         base: info.weather[0].main || 'no info',
                         city: info.name || 'No city',
                         country: info.sys.country || 'no country',
-                        icon: info.weather[0].icon,
-                        date: date.toLocaleString("en-US", {month: 'long', day: 'numeric'}),
+                        icon: `http://openweathermap.org/img/w/${info.weather[0].icon}.png`,
+                        date: action.date.toLocaleString("en-US", {month: 'long', day: 'numeric'}),
                         measure: 'C',
                         lat: info.coord.lat,
                         lng: info.coord.lon
@@ -77,7 +74,7 @@ export default function weatherReducer(state = initialState, action) {
                             ...state[action.field],
                             data: {
                                 ...state[action.field].data,
-                                temp: 9 / 5 * tempC + 32,
+                                temp: Math.round(9 / 5 * tempC + 32),
                                 measure: 'F'
                             }
                         }
@@ -94,7 +91,7 @@ export default function weatherReducer(state = initialState, action) {
                             ...state[action.field],
                             data: {
                                 ...state[action.field].data,
-                                temp: 5 / 9 * (tempF - 32),
+                                temp: Math.round(5 / 9 * (tempF - 32)),
                                 measure: 'C'
                             }
                         }

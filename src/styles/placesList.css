@@ -1,0 +1,29 @@
+.places-list {
+  background-color: #fff; }
+  .places-list__item {
+    margin-bottom: 10px;
+    padding: 10px 30px;
+    position: relative;
+    border: 1px solid #4e4d4a;
+    cursor: pointer;
+    box-shadow: 0px 10px 32px -6px #4e4d4a; }
+    .places-list__item:hover .places-list__item__name {
+      transform: scale(1.1, 1);
+      transition: transform 0.3s; }
+    .places-list__item__name {
+      color: #d26c22; }
+    .places-list__item__button {
+      padding: 4px 7px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #d26c22;
+      border: none;
+      color: #ecf0f1;
+      cursor: pointer; }
+      .places-list__item__button:hover {
+        color: #4e4d4a; }
+    .places-list__item__since {
+      font-size: 16px; }
+
+/*# sourceMappingURL=placesList.css.map */
