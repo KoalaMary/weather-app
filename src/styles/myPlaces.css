@@ -1,0 +1,23 @@
+.my-places {
+  display: flex;
+  flex-direction: column; }
+
+.button-panel {
+  padding: 30px 50px; }
+
+.places-space {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.places-list {
+  width: 400px;
+  height: 450px;
+  overflow-y: scroll;
+  border: 1px solid gray; }
+  .places-list__item {
+    font-size: 20px; }
+    .places-list__item p {
+      margin: 0; }
+
+/*# sourceMappingURL=myPlaces.css.map */

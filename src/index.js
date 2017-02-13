@@ -4,11 +4,21 @@ import {Router, browserHistory} from 'react-router';
 import {Provider} from 'react-redux';
 import {syncHistoryWithStore} from 'react-router-redux';
 import ReduxModal from 'react-redux-modal';
+import throttle from 'lodash/throttle';
 import initializeStore from './createStore';
 import routes from './routes';
+import {loadState, saveState} from './localStorage';
 
-const store = initializeStore({});
+const persistendState = loadState();
+const store = initializeStore(persistendState);
 const history = syncHistoryWithStore(browserHistory, store);
+
+store.subscribe(throttle(() => {
+    saveState({
+        places: store.getState().places,
+        settings: store.getState().settings
+    })
+}, 1000));
 
 render(
     <Provider store={store}>

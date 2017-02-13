@@ -1,36 +1,36 @@
 import React from 'react'
-import '../styles/sass/weatherCard.sass';
+import '../styles/weatherCard.css';
 
-const WeatherCard = ({weather, settings, options, tempToC, tempToF}) => (
+const WeatherCard = ({weather, settings, date, tempToC, tempToF}) => (
     <div className="weather-card" style={{fontStyle: settings.fontStyle}}>
-        <h3 className="weather-card__place">{weather.city}, {weather.country}</h3>
+        <h2 className="weather-card__place">{weather.city}, {weather.country}</h2>
         <p className="weather-card__date">{weather.date}</p>
         <h4 className="weather-card__description">Today is {weather.base}</h4>
-        <div className="weather-card__temp-block">
+        <div className="temp-block">
             <img src={`http://openweathermap.org/img/w/${weather.icon}.png`} alt="weather"
-                 className="weather-card__temp-block__image"/>
-            <p className="weather-card__temp-block__temp">{Math.floor(weather.temp)}&deg;{weather.measure}</p>
-            <div className="weather-card__temp-block__measure">
-                <button className="weather-card__temp-block__measure__C temp-button" onClick={() => tempToC()}>C
+                 className="temp-block__image"/>
+            <p className="temp-block__temp">{Math.floor(weather.temp)}&deg;{weather.measure}</p>
+            <div className="measure">
+                <button className="measure__C temp-button" onClick={() => tempToC()}>C
                 </button>
-                <button className="weather-card__temp-block__measure__F temp-button" onClick={() => tempToF()}>F
+                <button className="measure__F temp-button" onClick={() => tempToF()}>F
                 </button>
             </div>
         </div>
-        <ul className="weather-card__value-list">
+        <ul className="value-list">
             {settings.humidityChecked &&
-            <li className="weather-card__value-list__item">Humidity
-                <span className="weather-card__value-list__item__value">  {weather.humidity}</span>%
+            <li className="value-list__item">Humidity
+                <span className="value-list__item__value">  {weather.humidity}</span>%
             </li>
             }
             {settings.windChecked &&
-            <li className="weather-card__value-list__item">Wind
-                <span className="weather-card__value-list__item__value">  {weather.wind}</span>m/s
+            <li className="value-list__item">Wind
+                <span className="value-list__item__value">  {weather.wind}</span>m/s
             </li>
             }
             {settings.pressureChecked &&
-            <li className="weather-card__value-list__item">Pressure
-                <span className="weather-card__value-list__item__value">  {weather.pressure}</span>hPa
+            <li className="value-list__item">Pressure
+                <span className="value-list__item__value">  {weather.pressure}</span>hPa
             </li>
             }
         </ul>

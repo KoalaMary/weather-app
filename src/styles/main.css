@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  flex-direction: column; }
+
+.button-panel {
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .button-panel button {
+    margin-right: 10px; }
+
+.settings-button {
+  margin-right: 170px; }
+
+.weather-space {
+  padding: 0 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .weather-space__weather-card {
+    position: relative; }
+    .weather-space__weather-card__loader {
+      display: block;
+      position: absolute;
+      top: 45%;
+      left: -200px; }
+
+.map-container {
+  width: 700px;
+  height: 450px; }
+
+/*# sourceMappingURL=main.css.map */

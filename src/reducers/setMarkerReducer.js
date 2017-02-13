@@ -2,9 +2,9 @@ import {SET_MARKER} from "../constants";
 
 const initialState = {
     marker: {
-        position: {lat: 50.397, lng: 80.644},
+        position: {lat: 59.937105, lng: 30.314047},
     },
-    center: {lat: 50.397, lng: 80.644},
+    center: {lat: 59.937105, lng: 30.314047},
 };
 
 export default function coordinatesReducer(state = initialState, action) {

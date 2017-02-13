@@ -1,0 +1,26 @@
+$dark: #4e4d4a
+$theme-color: #d26c22
+.header
+  display: flex
+  flex-direction: row
+  align-items: center
+  background-color: $dark
+  color: #ecf0f1
+
+.nav
+  display: flex
+  flex-direction: row
+
+  &__item
+
+    &__link
+      margin-left: 30px
+      padding: 25px
+      color: #ecf0f1
+
+      &:hover
+        background-color: $theme-color
+
+      &_active
+        color: $dark
+        background-color: $theme-color

@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #4e4d4a;
+  color: #ecf0f1; }
+
+.nav {
+  display: flex;
+  flex-direction: row; }
+  .nav__item__link {
+    margin-left: 30px;
+    padding: 25px;
+    color: #ecf0f1; }
+    .nav__item__link:hover {
+      background-color: #d26c22; }
+    .nav__item__link_active {
+      color: #4e4d4a;
+      background-color: #d26c22; }
+
+/*# sourceMappingURL=header.css.map */

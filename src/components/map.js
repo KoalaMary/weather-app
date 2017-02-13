@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 import {connect} from 'react-redux';
 import setMarker from '../actions/setMarkerAction';
-import '../styles/css/map.css';
 
 const MapArguments = withGoogleMap((props) => (
     <GoogleMap
@@ -27,13 +26,13 @@ class Map extends Component {
 
     render() {
         return (
-            <div className='map-container'>
+            <div className="map-container">
                 <MapArguments
                     containerElement={
-                        <div style={{height: '100%'}}/>
+                        <div style={{height: "100%"}}/>
                     }
                     mapElement={
-                        <div style={{height: '100%'}}/>
+                        <div style={{height: "100%"}}/>
                     }
                     onMapClick={this.handleMapClick}
                     center={this.props.center}

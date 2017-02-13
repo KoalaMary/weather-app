@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {setBlueColor, setRedColor} from '../actions/settingsAction';
 import {connect} from 'react-redux';
-import '../styles/css/settings.css';
 import {setFontStyleNormal, setFontStyleItalic} from '../actions/settingsAction';
 import {humidityChecked, windChecked, pressureChecked} from '../actions/settingsAction';
 
@@ -92,7 +91,7 @@ class ModalSettings extends Component {
                         </ul>
                     </section>
                 </section>
-                <button onClick={this.removeThisModal}>Close modal</button>
+                <button className="button" onClick={this.removeThisModal}>Close modal</button>
             </div>
         );
     }

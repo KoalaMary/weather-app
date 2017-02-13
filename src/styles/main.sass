@@ -1,0 +1,34 @@
+.main
+  display: flex
+  flex-direction: column
+
+.button-panel
+  padding: 30px 50px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+  & button
+    margin-right: 10px
+
+.settings-button
+  margin-right: 170px
+
+.weather-space
+  padding: 0 50px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+  &__weather-card
+    position: relative
+
+    &__loader
+      display: block
+      position: absolute
+      top: 45%
+      left: -200px
+
+.map-container
+  width: 700px
+  height: 450px
