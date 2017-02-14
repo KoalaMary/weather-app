@@ -7,7 +7,7 @@ import PlacesList from '../components/placesList';
 import {getWeather} from '../actions/weatherAction';
 import {measureTempF, measureTempC} from '../actions/weatherAction';
 import ModalSettings from './settings';
-import {deletePlace} from '../actions/placeAction';
+import {updatePlaces} from '../actions/placeAction';
 import '../styles/myPlaces.css';
 
 class MyPlaces extends Component {
@@ -43,7 +43,8 @@ class MyPlaces extends Component {
     }
 
     deletePlace = (place) => {
-        this.props.dispatch(deletePlace(place));
+        let places = this.props.places;
+        this.props.dispatch(updatePlaces(place, places[0], 'placeWeather'));
     };
 
     renderPlacesSpace(places, weather, settings, api) {

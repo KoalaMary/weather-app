@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import {syncHistoryWithStore} from 'react-router-redux';
 import ReduxModal from 'react-redux-modal';
 import throttle from 'lodash/throttle';
-import initializeStore from './createStore';
+import initializeStore from './store';
 import routes from './routes';
 import {loadState, saveState} from './localStorage';
 

@@ -91,7 +91,9 @@ class Main extends Component {
                             marker={marker}
                         />
                     </div>
-                    < div className="weather-space__weather-card">
+                    {(api.error !== null)
+                        ? <h2 className="error">Ooops! No information about this place</h2>
+                        : < div className="weather-space__weather-card">
                         {api.isFetching
                             ? <h2 className="weather-space__weather-card__loader">Loading...</h2>
                             : <WeatherCard
@@ -101,6 +103,7 @@ class Main extends Component {
                             tempToC={this.tempToC}/>
                         }
                     </div>
+                    }
                 </div>
             </div>
         );

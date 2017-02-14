@@ -25,7 +25,9 @@ export default function weatherReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 [action.field]: {
                     api: {
-                        isFetching: true
+                        isFetching: true,
+                        fetched: false,
+                        error: null
                     }
                 }
             });
@@ -35,6 +37,7 @@ export default function weatherReducer(state = initialState, action) {
                 [action.field]: {
                     api: {
                         isFetching: false,
+                        fetched: false,
                         error: action.error
                     }
                 }
@@ -47,6 +50,7 @@ export default function weatherReducer(state = initialState, action) {
                     api: {
                         isFetching: false,
                         fetched: true,
+                        error: null
                     },
                     data: {
                         id: info.id,

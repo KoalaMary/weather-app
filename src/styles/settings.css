@@ -37,6 +37,10 @@ section {
     .background-color-settings__list__item.dark {
       background-color: #4e4d4a; }
 
+.color-active {
+  border: 2px solid #d26c22;
+  background-color: red; }
+
 .font-style-settings__list {
   width: 110px;
   display: flex;
