@@ -36,4 +36,11 @@
   height: 450px;
   box-shadow: 0px 10px 32px -6px #4e4d4a; }
 
+.fade-appear {
+  opacity: 0.01; }
+
+.fade-appear-active {
+  opacity: 1;
+  transition: 300ms ease-out all; }
+
 /*# sourceMappingURL=main.css.map */

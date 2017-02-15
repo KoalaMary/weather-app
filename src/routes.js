@@ -1,9 +1,9 @@
 import React from 'react';
 import {Route, IndexRoute} from 'react-router';
-import App from './containers/app';
-import MyPlaces from './containers/places';
-import ErrorPage from './components/errorPage';
-import Main from "./containers/main";
+import App from './pages/app';
+import Main from "./pages/main/main";
+import MyPlaces from './pages/places/places';
+import ErrorPage from './pages/errorPage';
 
 export default (
     <Route path='/' component={App}>

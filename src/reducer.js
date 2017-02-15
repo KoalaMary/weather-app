@@ -8,9 +8,9 @@ import placeReducer from './reducers/placeReducer';
 
 export default combineReducers({
     routing: routerReducer,
+    modals: modalReducer,
     map: setMarkerReducer,
     settings: settingsReducer,
     weather: getWeatherReducer,
-    places: placeReducer,
-    modals: modalReducer
+    places: placeReducer
 });

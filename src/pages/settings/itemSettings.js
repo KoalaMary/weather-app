@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
-import '../styles/settings.css';
+import '../../styles/settings.css';
 
-const FeatureSettings = ({settings, humidityChecked, windChecked, pressureChecked}) => (
+const ItemSettings = ({settings, humidityChecked, windChecked, pressureChecked}) => (
     <section className="feature-settings">
         <h4 className="settings-name">Features list</h4>
         <ul className="feature-settings__list settings-list">
@@ -20,11 +20,11 @@ const FeatureSettings = ({settings, humidityChecked, windChecked, pressureChecke
     </section>
 );
 
-FeatureSettings.propTypes = {
+ItemSettings.propTypes = {
     settings: PropTypes.object.isRequired,
     humidityChecked: PropTypes.func.isRequired,
     windChecked: PropTypes.func.isRequired,
     pressureChecked: PropTypes.func.isRequired
 };
 
-export default FeatureSettings;
+export default ItemSettings;
