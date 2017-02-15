@@ -4,7 +4,7 @@ import {modal} from 'react-redux-modal';
 import $ from 'min-jquery';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import WeatherCard from '../../components/weatherCard';
-import PlacesList from './placesList';
+import PlacesList from './components/placesList';
 import {getWeather} from '../../actions/weatherAction';
 import {measureTempF, measureTempC} from '../../actions/weatherAction';
 import ModalSettings from '../settings/settings';

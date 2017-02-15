@@ -8,7 +8,7 @@ import {getWeather} from '../../actions/weatherAction';
 import {addPlace} from '../../actions/placeAction';
 import {measureTempF, measureTempC} from "../../actions/weatherAction";
 import WeatherCard from '../../components/weatherCard';
-import Map from './map';
+import Map from './components/map';
 import ModalSettings from '../settings/settings';
 import '../../styles/main.css';
 
@@ -18,7 +18,7 @@ class Main extends Component {
         this.handleMapClick = this.handleMapClick.bind(this);
     }
 
-    field = 'mainWeather';
+    field = 'mapWeather';
 
     componentWillMount() {
         let position = this.props.position;
@@ -130,8 +130,8 @@ class Main extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        api: state.weather.mainWeather.api,
-        weather: state.weather.mainWeather.data,
+        api: state.weather.mapWeather.api,
+        weather: state.weather.mapWeather.data,
         settings: state.settings,
         position: state.map.marker.position,
         marker: state.map.marker,

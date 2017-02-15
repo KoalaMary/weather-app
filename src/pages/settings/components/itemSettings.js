@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import '../../styles/settings.css';
+import '../../../styles/settings.css';
 
 const ItemSettings = ({settings, humidityChecked, windChecked, pressureChecked}) => (
     <section className="feature-settings">

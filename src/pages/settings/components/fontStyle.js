@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import '../../styles/settings.css';
+import '../../../styles/settings.css';
 
 const FontStyle = ({fontStyle, setFontStyle}) => (
     <section className="font-style-settings">

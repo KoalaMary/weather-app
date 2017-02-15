@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import '../../styles/placesList.css';
+import '../../../styles/placesList.css';
 
 const PlacesList = ({places, getPlaceWeather, deletePlace}) => (
     <ul className="places-list">

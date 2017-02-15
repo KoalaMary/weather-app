@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {setFontStyle, setBackground} from '../../actions/settingsAction';
 import {humidityChecked, windChecked, pressureChecked} from '../../actions/settingsAction';
-import ThemeColor from './backgroundColor';
-import FontStyle from './fontStyle';
-import FeatureSettings from './itemSettings';
+import BackgroundColor from './components/backgroundColor';
+import FontStyle from './components/fontStyle';
+import ItemSettings from './components/itemSettings';
 import '../../styles/settings.css';
 
 class ModalSettings extends Component {
@@ -41,7 +41,7 @@ class ModalSettings extends Component {
     render() {
         const {settings, fontStyle} = this.props;
         const transitionOptions = {
-            transitionName: "example",
+            transitionName: "settings",
             transitionAppear: true,
             transitionAppearTimeout: 300,
             transitionEnter: false,
@@ -53,7 +53,7 @@ class ModalSettings extends Component {
                     <h2 className="title">Settings</h2>
                     <section className="common-settings">
                         <h3 className="common-settings__title settings-title">Common settings</h3>
-                        <ThemeColor
+                        <BackgroundColor
                             settings={settings}
                             setBackground={this.setBackground}/>
                     </section>
@@ -62,7 +62,7 @@ class ModalSettings extends Component {
                         <FontStyle
                             fontStyle={fontStyle}
                             setFontStyle={this.setFontStyle}/>
-                        <FeatureSettings
+                        <ItemSettings
                             settings={settings}
                             humidityChecked={this.humidityChecked}
                             windChecked={this.windChecked}

@@ -56,4 +56,11 @@ section {
   margin-bottom: 10px;
   cursor: pointer; }
 
+.settings-appear {
+  opacity: 0.01; }
+
+.settings-appear-active {
+  opacity: 1;
+  transition: 300ms ease-out all; }
+
 /*# sourceMappingURL=settings.css.map */
